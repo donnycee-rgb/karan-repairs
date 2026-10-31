@@ -4,8 +4,13 @@
 export const business = {
   name: 'FixTech Repair',
   tagline: 'Your phone fixed fast and reliably',
-  city: 'Nairobi, Kenya',
-  address: 'TODO: building / street, Nairobi',
+  city: 'Kirinyaga and Meru',
+  region: 'Mount Kenya region',
+  // TODO: add the street / building for each shop
+  locations: [
+    { name: 'Kirinyaga', address: 'TODO: building / street, Kirinyaga' },
+    { name: 'Meru', address: 'TODO: building / street, Meru' },
+  ],
   mapsUrl: '', // TODO: paste your Google Maps link
   phone: '+254 741 570 831',
   phoneLink: 'tel:+254741570831',

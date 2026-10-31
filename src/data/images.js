@@ -26,7 +26,7 @@ export const images = {
     juiceShop: { src: img('business-juice-shop'), alt: 'Juice shop owner using her phone' },
     phoneShop: { src: img('phone-shop'), alt: 'Young man in a phone accessories shop' },
   },
-  nairobi: { src: img('nairobi-skyline'), alt: 'Nairobi skyline at sunset' },
+  mountKenya: { src: img('mount-kenya'), alt: 'Mount Kenya, between Kirinyaga and Meru' },
 }
 
 // One photo per service id in site.js

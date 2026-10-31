@@ -103,7 +103,7 @@ export default function Home() {
             <div className="biz-overlay" />
             <div className="container biz-content">
               <div>
-                <Reveal as="span" className="eyebrow">Built for Nairobi hustle</Reveal>
+                <Reveal as="span" className="eyebrow">Built for the hustle</Reveal>
                 <Reveal as="h2" delay={80} className="biz-title">
                   Your phone is your <Marker type="underline">business.</Marker>
                 </Reveal>

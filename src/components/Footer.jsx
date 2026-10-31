@@ -36,7 +36,9 @@ export default function Footer() {
             {business.email && (
               <li><Mail size={16} /><a href={`mailto:${business.email}`}>{business.email}</a></li>
             )}
-            <li><MapPin size={16} /><span>{business.address}</span></li>
+            {business.locations.map((l) => (
+              <li key={l.name}><MapPin size={16} /><span>{l.name}: {l.address}</span></li>
+            ))}
           </ul>
         </div>
 

@@ -18,7 +18,7 @@ required, but these are the sources. Replace with your own shop photos when you 
 | repair-gloves.jpg | https://unsplash.com/photos/y2QUqmEzjzA |
 | repair-mat-broken.jpg | https://unsplash.com/photos/A-EtdVkNSCA |
 | repair-parts.jpg | https://unsplash.com/photos/YPj0Mi7aQtY |
-| nairobi-skyline.jpg | Unsplash photo-1611348524140-53c9a25263d6 |
+| mount-kenya.jpg | https://unsplash.com/photos/3GEyU1IYfzM |
 | repair-street-nigeria.jpg | https://www.pexels.com/photo/34264956/ (Kaduna, Nigeria) |
 | phone-shop.jpg | https://www.pexels.com/photo/15842398/ |
 | repair-screwdriver.jpg | https://www.pexels.com/photo/6755075/ |

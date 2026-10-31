@@ -78,7 +78,9 @@ export default function Contact() {
               <span className="icon-box"><MapPin size={22} /></span>
               <div>
                 <h3>Visit us</h3>
-                <p>{business.address}</p>
+                {business.locations.map((l) => (
+                  <p key={l.name}><strong>{l.name}:</strong> {l.address}</p>
+                ))}
                 {business.mapsUrl && (
                   <a href={business.mapsUrl} target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 )}

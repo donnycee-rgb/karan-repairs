@@ -9,10 +9,10 @@ import { images } from '../data/images.js'
 export default function CtaBanner() {
   return (
     <section className="cta-city">
-      <img src={images.nairobi.src} alt="" className="cta-city-bg" loading="lazy" />
+      <img src={images.mountKenya.src} alt="" className="cta-city-bg" loading="lazy" />
       <div className="cta-city-overlay" />
       <div className="container cta-city-content">
-        <Reveal as="span" className="eyebrow">Right here in {business.city}</Reveal>
+        <Reveal as="span" className="eyebrow">Serving {business.city}</Reveal>
         <Reveal as="h2" delay={80}>
           Phone giving you <Marker type="circle">trouble?</Marker>
         </Reveal>
