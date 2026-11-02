@@ -1,5 +1,7 @@
 // Photos live in public/images (sources in public/images/CREDITS.md).
-// Swap any of these for real shop photos by changing the path.
+// Swap any of these for real photos by changing the path.
+import { business } from './site.js'
+
 const img = (name) => `/images/${name}.jpg`
 
 export const images = {
@@ -26,7 +28,18 @@ export const images = {
     juiceShop: { src: img('business-juice-shop'), alt: 'Juice shop owner using her phone' },
     phoneShop: { src: img('phone-shop'), alt: 'Young man in a phone accessories shop' },
   },
-  mountKenya: { src: img('mount-kenya'), alt: 'Mount Kenya, between Kirinyaga and Meru' },
+  technician: {
+    portrait: { src: img('technician-road'), alt: `${business.technician.name}, the technician behind ${business.name}` },
+    roadside: { src: img('technician-roadside'), alt: `${business.technician.name} out on the road in Kirinyaga` },
+  },
+  // Real repair jobs (photos from the technician)
+  work: [
+    { src: img('work-tv-backlight'), alt: 'TV panel opened up with new backlight LED strips lit', caption: 'TV backlight strips replaced' },
+    { src: img('work-speakers'), alt: 'Two large speakers side by side, the old cone next to a freshly reconed one', caption: 'Speaker reconed: before and after' },
+    { src: img('work-amp-chip'), alt: 'TDA7266SA audio amplifier chip ready to fit', caption: 'Amplifier chip ready to fit' },
+    { src: img('work-tv-backlight-2'), alt: 'Backlight test on a TV panel before reassembly', caption: 'Backlight tested before reassembly' },
+  ],
+  mountKenya: { src: img('mount-kenya'), alt: 'Mount Kenya, seen from Kirinyaga' },
 }
 
 // One photo per service id in site.js
@@ -39,4 +52,6 @@ export const serviceImages = {
   audio: images.repair.street,
   software: images.customers[6],
   backglass: images.repair.matBroken,
+  tv: images.work[0],
+  sound: images.work[1],
 }

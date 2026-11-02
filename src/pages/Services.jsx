@@ -13,7 +13,7 @@ export default function Services() {
     <>
       <PageHero
         title="Our services"
-        text="Whatever is wrong with your phone, bring it in. We diagnose the problem and give you a clear quote before any work starts."
+        text="Phones, TVs and speakers. We check it for free and give you a clear quote before any work starts."
         image={images.repair.board}
       />
 
@@ -46,7 +46,7 @@ export default function Services() {
       <section className="section section--white">
         <div className="container">
           <div className="section-head">
-            <Reveal as="h2">Do not see your phone?</Reveal>
+            <Reveal as="h2">Do not see your device?</Reveal>
             <Reveal as="p" delay={80}>
               We repair all the brands above and many more. Send us your model on WhatsApp and we
               will tell you if we can fix it.

@@ -22,7 +22,7 @@ function head(path, { title, description }) {
     <link rel="canonical" href="${url}" />
     <meta name="robots" content="index, follow" />
     <meta name="geo.region" content="KE" />
-    <meta name="geo.placename" content="Kirinyaga, Meru" />
+    <meta name="geo.placename" content="${business.region}" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="${esc(business.name)}" />

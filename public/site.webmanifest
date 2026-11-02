@@ -1,7 +1,7 @@
 {
   "name": "FixTech Repair",
   "short_name": "FixTech",
-  "description": "Phone repair in Kirinyaga and Meru",
+  "description": "Mobile phone repair in Kirinyaga",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0F172A",

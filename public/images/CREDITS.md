@@ -23,3 +23,13 @@ required, but these are the sources. Replace with your own shop photos when you 
 | phone-shop.jpg | https://www.pexels.com/photo/15842398/ |
 | repair-screwdriver.jpg | https://www.pexels.com/photo/6755075/ |
 | cracked-phone.jpg | https://www.pexels.com/photo/1388947/ |
+
+## Own photos (from the technician)
+
+| File | Notes |
+| --- | --- |
+| technician-road.jpg | Cropped from a phone screenshot |
+| technician-roadside.jpg | Cropped from a phone screenshot |
+| work-tv-backlight.jpg, work-tv-backlight-2.jpg | TV backlight repair |
+| work-speakers.jpg | Speaker recone, before and after |
+| work-amp-chip.jpg | TDA7266SA amplifier chip |

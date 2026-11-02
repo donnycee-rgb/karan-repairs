@@ -11,7 +11,7 @@ export default function Footer() {
         <div>
           <Logo light />
           <p className="footer-text">
-            Fast, honest phone repair in {business.city}. iPhone and Android, done right.
+            Fast, honest mobile phone repair in {business.city}. iPhone and Android, done right.
           </p>
         </div>
 
@@ -36,14 +36,12 @@ export default function Footer() {
             {business.email && (
               <li><Mail size={16} /><a href={`mailto:${business.email}`}>{business.email}</a></li>
             )}
-            {business.locations.map((l) => (
-              <li key={l.name}><MapPin size={16} /><span>{l.name}: {l.address}</span></li>
-            ))}
+            <li><MapPin size={16} /><span>{business.serviceArea}. No physical shop: we come to you.</span></li>
           </ul>
         </div>
 
         <div>
-          <h4>Opening hours</h4>
+          <h4>Working hours</h4>
           <ul className="footer-list">
             {business.hours.map((h) => (
               <li key={h.days}><Clock size={16} /><span>{h.days}: {h.time}</span></li>

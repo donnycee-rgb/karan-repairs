@@ -15,6 +15,7 @@ export default function Contact() {
     phone: '',
     model: '',
     service: preselected?.title ?? '',
+    area: '',
     message: '',
   })
   const [errors, setErrors] = useState({})
@@ -41,6 +42,7 @@ export default function Contact() {
       `Phone: ${form.phone}`,
       `Phone model: ${form.model}`,
       `Repair: ${form.service}`,
+      form.area && `Area: ${form.area}`,
       form.message && `Details: ${form.message}`,
     ]
       .filter(Boolean)
@@ -53,7 +55,7 @@ export default function Contact() {
     <>
       <PageHero
         title="Book a repair"
-        text="Tell us what is wrong and we will get back to you with a quote. Or reach us directly below."
+        text="Tell us what is wrong and where you are. We will get back to you with a quote and arrange to meet."
         image={images.customers[5]}
       />
 
@@ -77,19 +79,14 @@ export default function Contact() {
             <div className="contact-method">
               <span className="icon-box"><MapPin size={22} /></span>
               <div>
-                <h3>Visit us</h3>
-                {business.locations.map((l) => (
-                  <p key={l.name}><strong>{l.name}:</strong> {l.address}</p>
-                ))}
-                {business.mapsUrl && (
-                  <a href={business.mapsUrl} target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-                )}
+                <h3>We come to you</h3>
+                <p>{business.meetUp}</p>
               </div>
             </div>
             <div className="contact-method">
               <span className="icon-box"><Clock size={22} /></span>
               <div>
-                <h3>Opening hours</h3>
+                <h3>Working hours</h3>
                 {business.hours.map((h) => (
                   <p key={h.days}>{h.days}: {h.time}</p>
                 ))}
@@ -128,6 +125,10 @@ export default function Contact() {
                 </select>
                 {errors.service && <span className="field-error">{errors.service}</span>}
               </div>
+            </div>
+            <div className="field">
+              <label htmlFor="area">Where are you? (town or area)</label>
+              <input id="area" name="area" value={form.area} onChange={update} placeholder="Kerugoya, Kutus, Sagana..." />
             </div>
             <div className="field">
               <label htmlFor="message">What is wrong? (optional)</label>

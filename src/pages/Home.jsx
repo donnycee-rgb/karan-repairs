@@ -1,4 +1,4 @@
-import { Phone, ArrowRight, ShieldCheck, Clock, BadgeCheck } from 'lucide-react'
+import { Phone, ArrowRight, ShieldCheck, MapPin, BadgeCheck } from 'lucide-react'
 import { Link } from '../components/Link.jsx'
 import ServiceIcon from '../components/ServiceIcon.jsx'
 import CtaBanner from '../components/CtaBanner.jsx'
@@ -10,6 +10,8 @@ import CrackSlider from '../components/CrackSlider.jsx'
 import Marquee from '../components/Marquee.jsx'
 import RepairTimeline from '../components/RepairTimeline.jsx'
 import { StackPanels, StackPanel } from '../components/StackPanels.jsx'
+import MeetTechnician from '../components/MeetTechnician.jsx'
+import WorkGallery from '../components/WorkGallery.jsx'
 import { business, services, reasons, brands } from '../data/site.js'
 import { images, serviceImages } from '../data/images.js'
 
@@ -29,7 +31,7 @@ export default function Home() {
             <div className="hero-grid-bg" aria-hidden="true" />
             <div className="container hero-layout">
               <div className="hero-copy">
-                <span className="eyebrow hero-in" style={{ '--i': 0 }}>Phone repair in {business.city}</span>
+                <span className="eyebrow hero-in" style={{ '--i': 0 }}>Mobile phone repair in {business.city}</span>
                 <h1>
                   <span className="hero-line hero-in" style={{ '--i': 1 }}>Cracked, dead</span>
                   <span className="hero-line hero-in" style={{ '--i': 2 }}>or soaked?</span>
@@ -38,8 +40,8 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="hero-text hero-in" style={{ '--i': 4 }}>
-                  Screens, batteries, charging ports and water damage for iPhone and Android. Quality
-                  parts, fair prices and a warranty on every repair.
+                  Screens, batteries, charging ports and water damage for iPhone and Android, plus TVs
+                  and speakers. Free check, fair prices and a warranty on every repair.
                 </p>
                 <div className="btn-row hero-in" style={{ '--i': 5 }}>
                   <Link to="/contact" className="btn btn-primary">
@@ -50,15 +52,15 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="hero-badges hero-in" style={{ '--i': 6 }}>
-                  <span><ShieldCheck size={18} /> Quality parts</span>
-                  <span><Clock size={18} /> Same-day repairs</span>
+                  <span><ShieldCheck size={18} /> Free phone check</span>
+                  <span><MapPin size={18} /> We come to you</span>
                   <span><BadgeCheck size={18} /> {business.warrantyDays}-day warranty</span>
                 </div>
               </div>
 
               <div className="hero-phones">
                 <PhoneCard className="hero-phone hero-phone--a" photos={pick(0, 3, 6)} tilt={-8} delay={0} time="9:41"
-                  statuses={['Screen replaced', 'Battery at 100%', 'Ready for pickup']} />
+                  statuses={['Screen replaced', 'Battery at 100%', 'Ready to hand back']} />
                 <PhoneCard className="hero-phone hero-phone--b" photos={pick(1, 4, 5)} tilt={6} delay={1400} time="12:05"
                   statuses={['Charging port fixed', 'Speaker working', 'Back glass done']} />
                 <PhoneCard className="hero-phone hero-phone--c" photos={pick(2, 5, 0)} tilt={-3} delay={2800} time="16:20"
@@ -109,7 +111,7 @@ export default function Home() {
                 </Reveal>
                 <Reveal as="p" delay={160} className="biz-text">
                   M-Pesa, WhatsApp orders, customer calls. When your phone is down, so is your
-                  income. We get you back up and running, often the same day.
+                  income. No need to close up and travel to a shop: we come to you and get you back up and running.
                 </Reveal>
                 <Reveal delay={220}>
                   <Link to="/contact" className="btn btn-primary">
@@ -165,6 +167,21 @@ export default function Home() {
               View all services <ArrowRight size={18} />
             </Link>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section">
+        <MeetTechnician />
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="section-head">
+            <Reveal as="span" className="eyebrow">From the workbench</Reveal>
+            <Reveal as="h2" delay={80}>Real <Marker type="underline">repairs</Marker>, not stock photos</Reveal>
+            <Reveal as="p" delay={160}>A few recent jobs, photographed on the day.</Reveal>
+          </div>
+          <WorkGallery />
         </div>
       </section>
 

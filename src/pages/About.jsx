@@ -4,6 +4,7 @@ import ServiceIcon from '../components/ServiceIcon.jsx'
 import CtaBanner from '../components/CtaBanner.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Marker from '../components/Marker.jsx'
+import WorkGallery from '../components/WorkGallery.jsx'
 import { business, reasons } from '../data/site.js'
 import { images } from '../data/images.js'
 
@@ -12,7 +13,7 @@ export default function About() {
     <>
       <PageHero
         title={`About ${business.name}`}
-        text={`A local phone repair shop in ${business.city}, built on honest work and fair prices.`}
+        text={`A mobile repair service across ${business.city}, built on honest work and fair prices.`}
         image={images.repair.street}
       />
 
@@ -21,35 +22,50 @@ export default function About() {
           <div>
             <Reveal as="span" className="eyebrow">Our story</Reveal>
             <Reveal as="h2" delay={80}>Fixing phones, building <Marker type="underline">trust</Marker></Reveal>
-            {/* TODO: replace with the real story — when you started, who does the repairs, what makes you different */}
             <Reveal as="p" delay={160}>
               Your phone holds your photos, your contacts, your M-Pesa and your business. When it
               breaks, you need it back quickly and you need to trust the person fixing it.
             </Reveal>
             <Reveal as="p" delay={220}>
-              That is why we started {business.name}: to give people in {business.city} a repair
-              shop that explains the problem clearly, quotes honestly and uses parts that last.
+              That is why {business.technician.name}, with about {business.technician.yearsExperience} years
+              of experience repairing phones, started {business.name}: a repair service for
+              people in {business.city} that comes to you, explains the problem clearly, quotes
+              honestly and uses parts that last. No shop rent means no shop queue, and you always
+              deal with the person doing the work.
             </Reveal>
             <Reveal as="ul" delay={280} className="check-list">
-              <li><Check size={18} /> Clear diagnosis and a quote before any work</li>
+              <li><Check size={18} /> Free check and a quote before any work</li>
               <li><Check size={18} /> Quality, tested replacement parts</li>
-              <li><Check size={18} /> {business.warrantyDays}-day warranty on repairs</li>
+              <li><Check size={18} /> {business.warrantyDays}-day warranty on replaced parts</li>
               <li><Check size={18} /> Your data and privacy respected</li>
             </Reveal>
           </div>
-          {/* TODO: swap these for real photos of your shop and team */}
           <div className="about-collage">
             <Reveal from="right" className="about-photo about-photo--main">
-              <img src={images.business.phoneShop.src} alt={images.business.phoneShop.alt} loading="lazy" />
+              <img src={images.technician.portrait.src} alt={images.technician.portrait.alt} loading="lazy" />
             </Reveal>
             <Reveal from="up" delay={200} className="about-photo about-photo--small">
-              <img src={images.repair.screwdriver.src} alt={images.repair.screwdriver.alt} loading="lazy" />
+              <img src={images.work[0].src} alt={images.work[0].alt} loading="lazy" />
+            </Reveal>
+            <Reveal delay={360} className="tech-tag">
+              <strong>{business.technician.name}</strong>
+              <span>{business.technician.role}</span>
             </Reveal>
           </div>
         </div>
       </section>
 
       <section className="section section--white">
+        <div className="container">
+          <div className="section-head">
+            <Reveal as="span" className="eyebrow">From the workbench</Reveal>
+            <Reveal as="h2" delay={80}>Recent <Marker type="underline">jobs</Marker></Reveal>
+          </div>
+          <WorkGallery />
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className="section-head">
             <Reveal as="h2">What we stand for</Reveal>

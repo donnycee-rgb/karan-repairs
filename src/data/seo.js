@@ -12,34 +12,34 @@ export const defaultImage = {
   path: '/og-image.jpg',
   width: 1200,
   height: 630,
-  alt: `${business.name}: phone repair in ${business.city}. Screens, batteries, charging ports and water damage.`,
+  alt: `${business.name}: mobile phone repair in ${business.city}. Screens, batteries, charging ports and water damage.`,
 }
 
 export const pages = {
   '/': {
-    title: `${business.name} | Phone Repair in Kirinyaga and Meru`,
+    title: `${business.name} | Mobile Phone Repair in Kirinyaga`,
     description:
-      'Fast, honest phone repair in Kirinyaga and Meru. Cracked screens, batteries, charging ports, water damage and more for iPhone, Samsung, Tecno, Infinix and all Android phones. Quality parts and a warranty on every repair.',
+      'Mobile phone repair in Kirinyaga: we come to you, any day, any time. Cracked screens, batteries, charging ports and water damage for iPhone, Samsung, Tecno, Infinix and all Android phones, plus TV and speaker repair. Free check and a 90-day warranty.',
   },
   '/services': {
-    title: `Phone Repair Services in Kirinyaga and Meru | ${business.name}`,
+    title: `Phone, TV and Speaker Repair in Kirinyaga | ${business.name}`,
     description:
-      'Screen and display replacement, battery replacement, charging port repair, water damage recovery, cameras, speakers, software and back glass. iPhone and Android repairs in Kirinyaga and Meru.',
+      'Screen and battery replacement, charging ports, water damage, cameras, software and back glass for iPhone and Android, plus TV backlight and speaker repair. Mobile repairs anywhere in Kirinyaga.',
   },
   '/pricing': {
     title: `Phone Repair Prices | ${business.name}`,
     description:
-      'Honest, upfront phone repair prices in Kirinyaga and Meru. Send us your phone model on WhatsApp for a quick quote before any work starts.',
+      'Honest, upfront repair prices in Kirinyaga. Free check: send your phone, TV or speaker model on WhatsApp for a quick quote before any work starts.',
   },
   '/about': {
-    title: `About Us | ${business.name}, Kirinyaga and Meru`,
+    title: `About Us | ${business.name}, Kirinyaga`,
     description:
-      'A local phone repair shop serving Kirinyaga and Meru, built on honest work, quality parts and fair prices. Your data and privacy respected.',
+      `Meet ${business.technician.name}, the technician behind ${business.name}, with ${business.technician.yearsExperience} years of experience repairing phones. A mobile repair service across Kirinyaga built on honest work and fair prices.`,
   },
   '/contact': {
     title: `Book a Phone Repair | ${business.name}`,
     description:
-      'Book a phone repair in Kirinyaga or Meru. Call, WhatsApp or fill in the form and get a quote for your iPhone or Android phone.',
+      'Book a mobile phone repair anywhere in Kirinyaga. Call, WhatsApp or fill in the form, tell us where you are, and get a quote for your iPhone or Android phone.',
   },
 }
 
@@ -48,19 +48,9 @@ export const notFound = {
   description: pages['/'].description,
 }
 
-// Structured data so Google understands the business and its two locations
+// Structured data so Google understands the business. It has no shop address, so it is
+// described as a service-area business covering Kirinyaga County.
 export function businessSchema(base) {
-  const shared = {
-    '@type': 'LocalBusiness',
-    name: business.name,
-    description: pages['/'].description,
-    url: base,
-    image: base + defaultImage.path,
-    logo: base + '/icon-512.png',
-    telephone: business.phone.replace(/\s/g, ''),
-    currenciesAccepted: 'KES',
-  }
-
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -71,18 +61,20 @@ export function businessSchema(base) {
         url: base,
         inLanguage: 'en-KE',
       },
-      ...business.locations.map((l) => ({
-        ...shared,
-        '@id': `${base}/#${l.name.toLowerCase()}`,
-        name: `${business.name} ${l.name}`,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: l.name,
-          addressRegion: `${l.name} County`,
-          addressCountry: 'KE',
-        },
-        areaServed: { '@type': 'AdministrativeArea', name: `${l.name} County` },
-      })),
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${base}/#business`,
+        name: business.name,
+        description: pages['/'].description,
+        url: base,
+        image: base + defaultImage.path,
+        logo: base + '/icon-512.png',
+        telephone: business.phone.replace(/\s/g, ''),
+        currenciesAccepted: 'KES',
+        address: { '@type': 'PostalAddress', addressRegion: business.region, addressCountry: 'KE' },
+        areaServed: { '@type': 'AdministrativeArea', name: business.region },
+        founder: { '@type': 'Person', name: business.technician.name },
+      },
     ],
   }
 }

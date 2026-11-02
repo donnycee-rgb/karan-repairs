@@ -32,6 +32,8 @@ body {
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* Slide-in animations start off-screen; clip (not hidden) keeps sticky panels working */
+  overflow-x: clip;
 }
 
 img {

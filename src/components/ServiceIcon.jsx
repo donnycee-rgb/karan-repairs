@@ -1,6 +1,6 @@
 import {
   Smartphone, Battery, Plug, Droplets, Camera, Volume2, Cpu, Layers,
-  ShieldCheck, Clock, BadgeCheck, Tag,
+  ShieldCheck, Clock, BadgeCheck, Tag, MapPin, Tv, Speaker, Search,
 } from 'lucide-react'
 
 const icons = {
@@ -16,6 +16,10 @@ const icons = {
   clock: Clock,
   badge: BadgeCheck,
   tag: Tag,
+  pin: MapPin,
+  tv: Tv,
+  speaker: Speaker,
+  search: Search,
 }
 
 export default function ServiceIcon({ name, size = 24 }) {
